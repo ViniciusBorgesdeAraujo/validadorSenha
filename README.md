@@ -74,6 +74,7 @@ public class TesteValidador {
 ---
 
 ## **📜 Licença**
-Este projeto está licenciado sob a [MIT License](LICENSE).  
+Este projeto está licenciado sob a [Licença MIT](https://github.com/ViniciusBorgesdeAraujo/validadorSenha/blob/main/Licen%C3%A7a%20MIT).
+
 
 ---

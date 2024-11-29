@@ -1,18 +1,79 @@
-## Getting Started
+### **validadorSenha - Biblioteca Java para Validação de Senhas**  
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Bem-vindo ao repositório da biblioteca **validadorSenha**! 🚀  
+Esta biblioteca foi projetada para validar senhas de maneira simples e eficiente, garantindo a segurança ao verificar critérios como comprimento, letras maiúsculas/minúsculas, números e caracteres especiais.  
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+## **📜 Funcionalidades**
+- Verifica se a senha atende os seguintes requisitos:  
+  - Pelo menos 8 caracteres.  
+  - Contém letras maiúsculas e minúsculas.  
+  - Inclui pelo menos um número.  
+  - Possui um caractere especial (ex: `@`, `#`, `$`).  
+- Fornece mensagens detalhadas para senhas inválidas.  
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+---
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## **📂 Estrutura do Projeto**
+```plaintext
+src
+└── br
+    └── com
+        └── validador
+            └── validadorSenha.java
+```
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+---
 
-## Dependency Management
+## **🚀 Como Usar**
+### 1. **Compilar o Código**
+No terminal, execute:  
+```bash
+javac -encoding UTF-8 -d ./bin ./src/br/com/validador/validadorSenha.java
+```  
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### 2. **Gerar o Arquivo JAR**
+Crie o pacote JAR:  
+```bash
+jar cf validadorSenha.jar -C ./bin .
+```  
+
+### 3. **Integrar no Projeto**
+Adicione o arquivo `validadorSenha.jar` ao classpath do seu projeto.  
+
+---
+
+## **🛠️ Exemplo de Uso**
+```java
+import br.com.validador.validadorSenha;
+
+public class TesteValidador {
+    public static void main(String[] args) {
+        String senha = "Senha@123";
+
+        try {
+            boolean senhaValida = validadorSenha.validarSenha(senha);
+            if (senhaValida) {
+                System.out.println("Senha válida!");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+    }
+}
+```
+
+---
+
+## **🧰 Tecnologias Utilizadas**
+- **Java 11+**
+- **Compilador:** `javac`
+- **Empacotador:** `jar`  
+
+---
+
+## **📜 Licença**
+Este projeto está licenciado sob a [MIT License](LICENSE).  
+
+---
